@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重定向到登录页面</title>
+    <script>
+        // 检查登录状态
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        } else {
+            window.location.href = 'main.html';
+        }
+    </script>
+</head>
+<body>
+    正在跳转...
+</body>
+</html>

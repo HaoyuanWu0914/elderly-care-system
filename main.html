@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员信息查询系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-right">
+                <button id="logoutBtn" class="logout-btn">退出</button>
+            </div>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="公司logo">
+                <span class="company-name">孝馨适老-用爱尽孝</span>
+            </div>
+            <h1>人员信息查询系统</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="请输入姓名、工号或其他关键词...">
+                <button id="searchBtn">搜索</button>
+            </div>
+            <div class="filter-options">
+                <select id="searchType">
+                    <option value="all">全部</option>
+                    <option value="name">姓名</option>
+                    <option value="age">年龄</option>
+                    <option value="address">住址</option>
+                    <option value="healthCondition">身体状况</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>搜索结果</h2>
+                    <span id="resultCount">找到 0 条结果</span>
+                </div>
+                <div class="results-grid" id="searchResults">
+                    <!-- 搜索结果将在这里动态显示 -->
+                </div>
+            </div>
+        </main>
+
+        <!-- 详细信息模态框 -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content">
+                <h2>详细信息</h2>
+                <button class="close">&times;</button>
+                <div id="personDetails"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script>
+        // 退出功能
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
